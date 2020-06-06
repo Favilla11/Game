@@ -6,7 +6,8 @@ public class Game {
 	public static void main(String[] args) {
 		Scanner Keyboard=new Scanner(System.in);
 		System.out.println("Welcome to the Compute 21!");
-		int totalnum=0;
+		int totalnum=1;
+		System.out.println(totalnum);
 		Random r= new Random();
 		for (int index=1;index<100;index++) {
 			int a=1;
@@ -25,7 +26,35 @@ public class Game {
 			totalnum+=add;
 			
 			
-		    if (totalnum<10&&totalnum!=0) {
+			if(totalnum<5&&totalnum>1&&a/2==0) {
+				a+=1;
+				totalnum=totalnum+(5-totalnum);
+				System.out.println(totalnum);
+			}
+				
+			if (totalnum==5&&a/2==0) {
+				a+=1;
+				int ran1=r.nextInt(3-1+1)+1;
+		    	totalnum=totalnum+ran1;
+		    	System.out.println(totalnum);
+			}
+			
+			
+			
+			if(totalnum<9&&totalnum>5&&a/2==0) {
+				a+=1;
+				totalnum=totalnum+(9-totalnum);
+				System.out.println(totalnum);
+			}
+			
+			if (totalnum==9&&a/2==0) {
+				a+=1;
+				int ran1=r.nextInt(3-1+1)+1;
+		    	totalnum=totalnum+ran1;
+		    	System.out.println(totalnum);
+			}
+			
+		    if (totalnum<10&&a/2==0) {
 		    a+=1;
 		    int addC=r.nextInt(3-1+1)+1;
 		    totalnum=totalnum+addC;
@@ -42,6 +71,7 @@ public class Game {
 		    	a+=1;
 		    	int ran1=r.nextInt(3-1+1)+1;
 		    	totalnum=totalnum+ran1;
+		    	System.out.println(totalnum);
 		    }
 		    
 		    
@@ -64,12 +94,15 @@ public class Game {
 			}
 			
 			
-			if (totalnum==21&&a/2==0) {
-				System.out.println(totalnum);
+			if (totalnum>=21&&a/2!=0) {
 				System.out.println("You lost!");
 				break;
 				}
 			
+			if (totalnum>=21&&a/2==0) {
+				System.out.println("You win!");
+				break;
+				}
 
 		   }
 	}

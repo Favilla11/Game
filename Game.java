@@ -14,54 +14,63 @@ public class Game {
 			int add=Keyboard.nextInt();
 			if (add>3||add<1) {
 				for (int b=0; b<100; b++){
-					break;
-			}
-				System.out.println("Enter the number you want to add: ");
+					System.out.println("Enter the number you want to add: ");
+					add=Keyboard.nextInt();
+					if (add>0&&add<4) {
+						break;
+					}
+				}
+				
 			}
 			totalnum+=add;
 			
-		    if (totalnum<14&&totalnum!=0) {
+			
+		    if (totalnum<10&&totalnum!=0) {
 		    a+=1;
 		    int addC=r.nextInt(3-1+1)+1;
 		    totalnum=totalnum+addC;
 		    System.out.println(totalnum);
 		    }	
 		    
-		    if (totalnum==14&&a/2==0) {
-		    a+=1;
-			int add3=3;
-			totalnum=totalnum+add3;
-			System.out.println(totalnum);
+		    if (totalnum<13&&totalnum>9&&a/2==0) {
+				a+=1;
+				totalnum=totalnum+(13-totalnum);
+				System.out.println(totalnum);
+			}
+		    
+		    if (totalnum==13&&a/2==0) {
+		    	a+=1;
+		    	int ran1=r.nextInt(3-1+1)+1;
+		    	totalnum=totalnum+ran1;
 		    }
 		    
-            if (totalnum<17&&totalnum>14) {
+		    
+            if (totalnum<17&&totalnum>13&&a/2==0) {
+            	a+=1;
             	totalnum=totalnum+(17-totalnum);
             	System.out.println(totalnum);
             }
 			
-			
-			if (totalnum==18&&a/2==0) {
-			int addA=3;
-			totalnum=totalnum+addA;
-			System.out.println(totalnum);
+            if (totalnum==17&&a/2==0) {
+		    	a+=1;
+		    	int ran1=r.nextInt(3-1+1)+1;
+		    	totalnum=totalnum+ran1;
+		    }
+            
+			if (totalnum<21&&totalnum>17&&a/2==0) {
+				a+=1;
+				totalnum=totalnum+(21-totalnum);
+				System.out.println(totalnum);
 			}
 			
-			if (totalnum==19&&a/2==0) {
-				int addB=3;
-				totalnum=totalnum+addB;
-				System.out.println(totalnum);
-				}
 			
-			if (totalnum==20&&a/2==0) {
-				int addc=1;
-				totalnum=totalnum+addc;
+			if (totalnum==21&&a/2==0) {
 				System.out.println(totalnum);
-				}
-			
-			if (totalnum>=21) {
-				System.out.println("You lost and I win!");
+				System.out.println("You lost!");
 				break;
 				}
+			
+
 		   }
-		}
 	}
+}
